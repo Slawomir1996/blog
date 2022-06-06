@@ -20,17 +20,16 @@ export class UserController {
 
     }
     @Get(':id')
-    findOne(@Param('id') id: number): Observable<User> {
-        return this.userService.findOne(id);
+    findOne(@Param() param): Observable<User> {
+        return this.userService.findOne(param.id);
     }
     @Delete(':id')
     deleteOne(@Param('id') id: string): Observable<User> {
         return this.userService.deleteOne(Number(id));
 
     }
-    @Put(':id')
-    updateOne(@Param('id') id: string, @Body() user: User): Observable<User> {
-        return this.userService.updateOne(Number(id), user);
+    @Put(':id/update')
+    updateOne(@Param('id') id: string): Observable<User> {
+        return this.userService.updateOne(Number(id));
     }
-
 }

@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm'
 import { UserEntity } from '../models/user.entity';
-import { Repository } from 'typeorm';
+import { Repository, UpdateResult } from 'typeorm';
 import { User } from '../models/user.interface'
 import { from, Observable } from 'rxjs';
+import { switchMap, map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -21,11 +22,12 @@ export class UserService {
     }
 
 
-    findOne(id: number): Observable<User> {
-        return from(this.findOne(id));
+    findOne(id: number): Observable<any> {
+        return from(this.userRepository.query(`SELECT * FROM "public"."user_entity" WHERE id=${id}`));
     }
-    updateOne(id: number, user: User): Observable<any> {
-        return from(this.userRepository.update(id, user));
+    updateOne(id: number): Observable<any> {
+        return from(this.userRepository.query(`UPDATE "user_entity" SET name="tomas" WHERE id=${id}`)
+        );
     }
     deleteOne(id: number): Observable<any> {
         return from(this.userRepository.delete(id));
