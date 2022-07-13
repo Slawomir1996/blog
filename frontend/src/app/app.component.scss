@@ -1,0 +1,85 @@
+h1 {
+    margin-bottom: 0;
+  }
+  nav a {
+    padding: 1rem;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #e8e8e8;
+    color: #3d3d3d;
+    border-radius: 4px;
+  }
+  
+  nav a:hover {
+    color: white;
+    background-color: #42545C;
+  }
+  nav a.active {
+    background-color: black;
+  }
+  .app-menu {
+    background-color: royalblue;
+    padding: 0;
+    margin: auto;
+    max-width: 100%;
+  
+    /* flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+    h1{
+      margin: auto;
+      color: #fff;
+    }
+  }
+  
+  a {
+    background-color: #3f525c;
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    min-width: 70px;
+    margin: .5rem auto;
+    box-sizing: border-box;
+  
+    /* flexbox */
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+  
+  @media (min-width: 600px) {
+    a {
+      width: 18%;
+      box-sizing: content-box;
+    }
+  }
+  
+  a:hover {
+    background-color: #000;
+  }
+  .hamburgerMenu {
+    padding-left: 10px;
+    width: 240px;
+    background-color: #e8e8e8;
+    color: #3d3d3d;
+    font-size: 12px;
+    border-radius: 4px;
+    height: 40px;
+    margin-top: 10px;
+    align-items: flex-start;
+    margin-right: 50px;
+    
+  }
+  
+
+  
