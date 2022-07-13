@@ -1,19 +1,20 @@
 // import { BlogEntry } from "src/blog/model/blog-entry.interface";
-
 export interface User {
-    id: number;
+    id?: number;
     name?: string;
     username?: string;
     email?: string;
     password?: string;
-    // role?: UserRole;
+    role?: UserRole;
     // profileImage?: string;
     // blogEntries?: BlogEntry[];
 }
 
-// export enum UserRole {
-//     ADMIN = 'admin',
-//     CHIEFEDITOR = 'chiefeditor',    
-//     EDITOR = 'editor',
-//     USER = 'user'
-// }
+
+enum UserRole {
+    ADMIN = 'admin',
+    CHIEFEDITOR = 'chiefeditor',
+    EDITOR = 'editor',
+    USER = 'user'
+}
+export default UserRole;

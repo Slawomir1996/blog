@@ -4,6 +4,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
+// import { BlogModule } from './blog/blog.module';
+import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
+import { join } from 'path';
+
 
 @Module({
   imports: [
@@ -14,7 +19,10 @@ import { UserModule } from './user/user.module';
       autoLoadEntities: true,
       synchronize: true
     }),
-    UserModule
+    UserModule,
+    AuthModule,
+    // BlogModule
+
   ],
   controllers: [AppController],
   providers: [AppService],
