@@ -1,0 +1,21 @@
+<nav class="app-menu">
+  <h1>Blog</h1>
+  <a routerLink="users">Users</a>
+  <a style="margin-left: 20px;" routerLink="create-blog-entry">Create Post</a>
+  <a style="margin-left: 20px;"  routerLink="admin">Admin</a>
+<div class="hamburgerMenu">
+ <mat-form-field  name="loginRegisterDropdown">
+    <mat-select  placeholder="-Menu-">
+      <mat-option (click)="navigateTo('login')">Login</mat-option>
+      <mat-option (click)="navigateTo('register')">Register</mat-option>
+      <mat-option (click)="navigateTo('update-profile')">Update Profile</mat-option>
+      <mat-option (click)="logout()">Logout</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+
+
+</nav>
+<router-outlet></router-outlet>
